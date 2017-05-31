@@ -10,6 +10,7 @@
                 width:1000px;
             }
             .mySlides {display:none;}
+            
         </style>
     </head>  
 	
@@ -18,6 +19,7 @@
     	<header id="header">
 			<div id="header_area">
 				<div id="logo"><img src="files/icon/logo.png" alt="Logo"></div>
+					<div id="session" align="right">
 					<?php 
 						if(!isset($_SESSION))
                            {
@@ -27,7 +29,7 @@
 		                                  {
 		                                  $sid = $_SESSION['varname'];
 		                                  echo $sid;
-		                                  echo '<a href="logout.php"><button>log out</button></a>';
+		                                  echo '<a href="logout.php"><button >log out</button></a>';
 
 		                                  }
 		                                  else
@@ -52,6 +54,7 @@
                                   
 
 					?>
+					</div>
                
 			</div>
 

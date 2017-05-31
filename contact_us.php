@@ -13,6 +13,7 @@
     	<header id="header">
 			<div id="header_area">
 				<div id="logo"><img src="files/icon/logo.png" alt="Logo"></div>
+				<div id="session" align="right">
 				<?php 
 						if(!isset($_SESSION))
                            {
@@ -47,6 +48,7 @@
                                   
 
 					?>
+					</div>
                 
 			</div>
 
@@ -173,11 +175,19 @@
 		    
 	
 	</div> 
-		<footer id="footer">
-			&copy; All Rights are reserved 2016.
-		</footer>  
 </div>
 	  
+		    
+	
+	</div> 
+     
+		
+	
+		<footer id="footer">
+			&copy; All Rights are reserved 2016.
+		</footer>    
+	
+	</div>
 		</body>
 </html> 
         

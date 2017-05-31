@@ -37,9 +37,9 @@ if(mysql_query($result))
             if(mysql_query($updatestatus))
             {
                 echo '<script type="text/javascript">alert("updated!")</script>'.mysql_error();
-                //header("location: user_profile.php");
-                session_destroy();
-                include 'index.php';
+                header("location: user_profile.php");
+                //session_destroy();
+                //include 'index.php';
 
 
             }

@@ -43,6 +43,7 @@
       <header id="header">
       <div id="header_area">
         <div id="logo"><img src="files/icon/logo.png" alt="Logo"></div>
+        <div id="session" align="right">
         <?php 
             
           if(!isset($_SESSION))
@@ -78,6 +79,7 @@
                             }
 
           ?>
+          </div>
                   
       </div>
 
@@ -120,7 +122,7 @@
                        
                     <h1>DONOR LIST!!!</h1>
                    <div id="reg">
-                   <form name="myForm"    action="donorlist_process.php" method="post" >
+                   <form name="myForm"    action="done.php" method="post" >
                     <table id="dataTables-example">
 
                     <thead>
@@ -188,15 +190,39 @@
                   <tr>
                   
                   <td><?=$count ?></td>
-                  <td><?=$rowtwo['id']?></td>
+                  <td ><input type="hidden" name="statusid" value="
+                  <?=$rowtwo['id'];
+                      //$_SESSION['statusid']=$rowthree['id'];
+                      ?>"></td>
                   <td><?=$rowtwo['first']?>&nbsp<?=$rowtwo['last']?></td>
                   <td><?=$rowthree['appdate']?></td>
                   <td><?=$rowthree['shirt']?></td>
                   <td><?=$rowthree['pant']?></td>
                   <td><?=$rowthree['jacket']?></td>
                   <td><?=$rowthree['blanket']?></td>
-                  <td><?=$rowthree['status']?></td>
+                  <td>
+                  <select name="statuschange">
+                            <?php 
+                                if($rowthree['status']=="pending")
+                                {
+                                  echo "<option value='pending' selected>pending</option>";
+                                  echo "<option value='done' >done</option>";
+                                 // $_SESSION['statuschange']=$rowthree['status'];
+                                  //$_SESSION['statusid']=$rowthree['id'];
 
+                                 
+                                }
+                                else
+                                {
+                                  echo "<option value='done' selected>done</option>";
+                                  echo "<option value='pending' >pending</option>";
+                                  //$_SESSION['statuschange']=$rowthree['status'];
+                                 // $_SESSION['statusid']=$rowthree['id'];
+                                }
+
+                            ?>
+                    </select >
+                      </td>
                   </tr> 
               <?php
                     
@@ -223,7 +249,7 @@
 
 
                       
-                       <input type="search" name="doneid">
+                       
                        <input type="submit" name="done" value="done!!">
                        </form>
                    </div>

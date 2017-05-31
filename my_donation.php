@@ -27,6 +27,7 @@
     	<header id="header">
 			<div id="header_area">
 				<div id="logo"><img src="files/icon/logo.png" alt="Logo"></div>
+        <div id="session" align="right">
 				<?php 
 						
 if(!isset($_SESSION))
@@ -60,6 +61,7 @@ if(!isset($_SESSION))
                             }
 
 					?>
+          </div>
                   
 			</div>
 
