@@ -98,13 +98,23 @@ echo "failed";
                                   <li><a href="dashboard.php"> Dashboard</a></li>';
 
                                   }
-                                  else
+
+
+                                  else if($role=='moderator')
+                                  {
+                                    echo '<li><a href="index.php"> Home </a></li>
+                                  <li><a href="about_us.php"> About Us</a></li>
+                                  <li><a href="contact_us.php"> Contact Us </a></li>
+                                  <li><a href="dashboard_for_mod.php"> Dashboard</a></li>';
+
+                                  }
+                                  else if($role=='donor')
 
                                   echo '<li><a href="index.php"> Home </a></li>
                                   <li><a href="about_us.php"> About Us</a></li>
                                   <li><a href="contact_us.php"> Contact Us </a></li>
                                   
-                                  <li><a href="user_profile.php"> User Profile </a></li>';
+                                  <li><a href="dashboard_for_donor.php"> Dashboard </a></li>';;
                                   }
                                   else
                                   {
@@ -208,15 +218,12 @@ echo "failed";
                 </div>
                 
                
-                        
+                  <footer id="footer">
+                    &copy;All Rights are reserved 2016.
+                  </footer>           
 			   
 		</div>
-	
-		<footer id="footer">
-			&copy;All Rights are reserved 2016.
-		</footer>    
-	
-	</div> 
+  </body>
 </html>
         
     

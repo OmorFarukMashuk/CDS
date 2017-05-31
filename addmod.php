@@ -19,7 +19,8 @@ function validateForm() {
 
     if(document.getElementById("firstnameid").value==null||document.getElementById("firstnameid").value==""||document.getElementById("lastnameid").value==null||document.getElementById("lastnameid").value==""||document.getElementById("phone").value==null||document.getElementById("phone").value==""||
         document.getElementById("pass1").value==null||document.getElementById("pass1").value==""||
-        document.getElementById("pass2").value==null||document.getElementById("pass2").value==""
+        document.getElementById("pass2").value==null||document.getElementById("pass2").value==""||
+        document.getElementById("dobid").value==null||document.getElementById("dobid").value==""
         ){
         alert("field empty");
     return false;
@@ -61,6 +62,41 @@ function validateForm() {
     	<header id="header">
 			<div id="header_area">
 				<div id="logo"><img src="files/icon/logo.png" alt="Logo"></div>
+
+                <?php 
+                        if(!isset($_SESSION))
+                           {
+                                  session_start();
+
+                                          if(isset($_SESSION['varname']))
+                                          {
+                                          $sid = $_SESSION['varname'];
+                                          echo $sid;
+                                          echo '<a href="logout.php"><button>log out</button></a>';
+
+                                          }
+                                          else
+                                          {
+                                            echo "not logged in";
+                                          }
+                            }
+                            else
+                            {
+                                if(isset($sid)) // if sid  has any value then it will enter inside else dont
+                                  {
+                                  //$sid = $_SESSION['varname'];
+                                          echo $sid;
+                                          echo '<a href="logout.php"><button>log out</button></a>';
+                                  }
+                                  else // 
+                                  {
+                                 echo "not logged in";
+                                  }
+                            }
+                                  
+                                  
+
+                    ?>
                   
 			</div>
 
@@ -87,31 +123,24 @@ function validateForm() {
                    <div id="reg">
                    <form name="myForm"  onsubmit="return validateForm()"  action="addmod_process.php" method="post" attribute enctype="multipart/form-data">
                        <ul>
-                            Image Upload<li><input type="file" name="file_img" id="fileChooser" accept =".jpg, .jpeg, .png"/><br>
-                            First Name<li><input type="text" name="FirstName" id="firstnameid" placeholder="First Name" ><br></li>
-                            Last Name<li><input type="text" name ="LastName" id="lastnameid" placeholder="Last Name"><br></li>
-                            DOB<li><input type="date" name="DOB" value="2016-04-06"><br></li>
-                            Hourse Address<li><textarea rows="4" cols="50" name="houseaddress"></textarea><br></li>
-
-                            <li>District:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp 
-                            <select name='district'>
-                              <option value="dhaka">dhaka</option>
-                              <option value="khulna">khulnna</option>
-                              <option value="chittagong">chittagong</option>
-                             
-                            </select><br></li>
-
-
-
-                            Gender<li><input type="radio" name="Gender" value="male" checked>Male<br>
-                                      <input type="radio" name="Gender" value="female" >Female<br></li>
-                            Phone<li><input type="text" name="Phone" id="phone" placeholder="Phone"><br></li>
-                            Email ID<li><input type="text" name="email" id="emailid" placeholder="Email ID"><br></li>
-                            Password<li><input type="password" name="password"id="pass1" placeholder="password"><br></li>
-                            Confirm password<li><input type="password" id="pass2"  placeholder="password"><br></li>
-
-
-                            <input type="submit"  name="submit" value="Submit" "><br>
+                         <pre>
+Image Upload          <input type="file" name="file_img" id="fileChooser" accept =".jpg, .jpeg, .png"/><br>
+First Name            <input type="text" name="FirstName" id="firstnameid" placeholder="First Name" ><br>
+Last Name             <input type="text" name ="LastName" id="lastnameid" placeholder="Last Name"><br>
+DOB                   <input type="date" name="DOB" id="dobid"><br>
+Hourse Address<li><textarea rows="4" cols="50" name="houseaddress" id="houseaddressid"></textarea><br></li>
+District:             <select name='district'>
+                      <option value="dhaka">dhaka</option>
+                      <option value="khulna">khulnna</option>
+                      <option value="chittagong">chittagong</option>
+                      </select><br>
+Gender                <input type="radio" name="Gender" value="male" checked> Male   <input type="radio" name="Gender" value="female" > Female<br>
+Phone                 <input type="text" name="Phone" id="phone" placeholder="Phone"><br>
+Email ID              <input type="text" name="email" id="emailid" placeholder="Email ID"><br>
+Password              <input type="password" name="password"id="pass1" placeholder="password"><br>
+Confirm password      <input type="password" id="pass2"  placeholder="password"><br>
+                      <input type="submit"  name="submit" value="Submit"><br>
+                          </pre>
                        </ul>
                        </form>
                    </div>
@@ -119,15 +148,14 @@ function validateForm() {
                 
                
                         
-			   
+			 <footer id="footer">
+      &copy;All Rights are reserved 2016.
+    </footer>    
 		</div>
 	
-		<footer id="footer">
-			&copy;All Rights are reserved 2016.
-		</footer>    
+		  
 	
-	</div> 
-    </body>
+	
 </html>
         
     

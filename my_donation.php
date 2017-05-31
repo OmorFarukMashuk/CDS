@@ -72,8 +72,8 @@ if(!isset($_SESSION))
                                   echo '<li><a href="index.php"> Home </a></li>
                                   <li><a href="about_us.php"> About Us</a></li>
                                   <li><a href="contact_us.php"> Contact Us </a></li>
-                                  <li><a href="app.php"> Set Appoinment </a></li>
-                                  <li><a href="user_profile.php"> User Profile </a></li>';
+                                  
+                                  <li><a href="dashboard_for_donor.php"> Dashboard </a></li>';
                                   }
                                   else
                                   {
@@ -128,10 +128,10 @@ while ($row = mysql_fetch_assoc($result)){
 }
 echo "done!!".'<br>';
 echo "<table>";
-echo "<tr><td>total number of shirt in stock</td><td>".$shirt.'</td></tr>'.
-  "<tr><td>total number of pant in stock</td><td>".$pant.'</td></tr>'.
-  "<tr><td>total number of jacket in stock</td><td>".$jacket.'</td></tr>'.
-  "<tr><td>total number of blanket in stock</td><td>".$blanket.'</td></tr>';
+echo "<tr><td>total number of shirt</td><td>".$shirt.'</td></tr>'.
+  "<tr><td>total number of pant</td><td>".$pant.'</td></tr>'.
+  "<tr><td>total number of jacket</td><td>".$jacket.'</td></tr>'.
+  "<tr><td>total number of blanket</td><td>".$blanket.'</td></tr>';
 echo "</table>";
   $result1=mysql_query("select * from inventory where user_id='$sid' and status='pending'") 
 or die("failed to query from inventory".mysql_error());
@@ -149,10 +149,10 @@ while ($row = mysql_fetch_assoc($result1)){
 }
 echo "pending".'<br>';
 echo "<table>";
-echo "<tr><td>total number of shirt in stock</td><td>".$shirt1.'</td></tr>'.
-  "<tr><td>total number of pant in stock</td><td>".$pant1.'</td></tr>'.
-  "<tr><td>total number of jacket in stock</td><td>".$jacket1.'</td></tr>'.
-  "<tr><td>total number of blanket in stock</td><td>".$blanket1.'</td></tr>';
+echo "<tr><td>total number of shirt</td><td>".$shirt1.'</td></tr>'.
+  "<tr><td>total number of pant</td><td>".$pant1.'</td></tr>'.
+  "<tr><td>total number of jacket</td><td>".$jacket1.'</td></tr>'.
+  "<tr><td>total number of blanket</td><td>".$blanket1.'</td></tr>';
 echo "</table>";
 
 
@@ -173,15 +173,13 @@ echo "</table>";
                 </div>
                 
                
-                        
+        <footer id="footer">
+          &copy;All Rights are reserved 2016.
+        </footer>                     
 			   
 		</div>
 	
-		<footer id="footer">
-			&copy;All Rights are reserved 2016.
-		</footer>    
-	
-	</div> 
+  </body> 
 </html>
         
     

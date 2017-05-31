@@ -16,13 +16,19 @@ if($row['email']==$email && $row['pass']==$pass )
 	$_SESSION['varname'] = $sid;
 	if($row['role']=='moderator')
 	{
-		include("index.php");
-
+		include("dashboard_for_mod.php");
+		exit();
 	}
+	else if($row['role']=='admin')
+	{
+		include("dashboard.php");
+		exit();
+	}
+
 	else
 	{
-		include("index.php");
-
+		include("dashboard_for_donor.php");
+			exit();
 	}
 
 

@@ -95,7 +95,7 @@
                         <li><a href="about_us.php"> About Us</a></li>
                        
                         <li><a href="contact_us.php"> Contact Us </a></li>
-                        <li><a href="dashboard.php"> Dashboard </a></li>
+                        <li><a href="dashboard_for_donor.php"> Dashboard </a></li>
                     </ul>
                 </nav>
             </div>
@@ -110,20 +110,18 @@
                 <table >
                     <tr>
                         <td>
-                            <a href="addmod.php" class="myButton">Add Moderator</a>
+                            <a href="app.php" class="myButton">Set Appointment</a>
                         </td>
                         <td>
-                            <a href="user_details.php" class="myButton">User Details</a>
+                            <a href="my_donation.php" class="myButton">My Donation</a>
                         </td>
                        
                     </tr>
                     <tr>
                         <td>
-                             <a href="useredit.php" class="myButton">Delete User</a>
-                        </td>
-                        <td>
                              <a href="user_profile.php" class="myButton">User Profile</a>
                         </td>
+                        
                       
                             
                         

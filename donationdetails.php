@@ -1,9 +1,3 @@
-<?php
-
-
-
-?>
-
 
 <!DOCTYPE HTML>
 <html >
@@ -33,38 +27,39 @@
 			<div id="header_area">
 				<div id="logo"><img src="files/icon/logo.png" alt="Logo"></div>
 				<?php 
-						if(!isset($_SESSION))
+            if(!isset($_SESSION))
                            {
                                   session_start();
 
-		                                  if(isset($_SESSION['varname']))
-		                                  {
-		                                  $sid = $_SESSION['varname'];
-		                                  echo $sid;
-		                                  echo '<a href="logout.php"><button>log out</button></a>';
+                                      if(isset($_SESSION['varname']))
+                                      {
+                                      $sid = $_SESSION['varname'];
+                                      echo $sid;
+                                      echo '<a href="logout.php"><button>log out</button></a>';
 
-		                                  }
-		                                  else
-		                                  {
-		                                  	echo "not logged in";
-		                                  }
+                                      }
+                                      else
+                                      {
+                                        echo "not logged in";
+                                      }
                             }
                             else
                             {
-								//echo $sid;
-                            	echo '<a href="logout.php"><button>log out</button></a>';
-                            }
-                                  
-                                  if(isset($sid)) // if sid  has any value then it will enter inside else dont
+                if(isset($sid)) // if sid  has any value then it will enter inside else dont
                                   {
-                                  //
+                                  //$sid = $_SESSION['varname'];
+                                      echo $sid;
+                                      echo '<a href="logout.php"><button>log out</button></a>';
                                   }
                                   else // 
                                   {
-                                 
+                                 echo "not logged in";
                                   }
+                            }
+                                  
+                                  
 
-					?>
+          ?>
                   
 			</div>
 
@@ -77,10 +72,8 @@
                                   echo '<li><a href="index.php"> Home </a></li>
                                   <li><a href="about_us.php"> About Us</a></li>
                                   <li><a href="contact_us.php"> Contact Us </a></li>
-                                  <li><a href="app.php"> Set Appoinment </a></li>
-                                  <li><a href="user_profile.php"> User Profile </a></li>
-                                  <li><a href="my_donation.php"> My donation </a></li>
-                                  <li><a href="donorlist.php">donor list </a></li>';
+                                 
+                                  <li><a href="dashboard_for_mod.php"> Dashboard</a></li>';
                                   }
                                   else
                                   {
@@ -154,10 +147,10 @@ while ($row = mysql_fetch_assoc($result1)){
 }
 echo "pending".'<br>';
 echo "<table>";
-echo "<tr><td>total number of shirt in stock</td><td>".$shirt1.'</td></tr>'.
-  "<tr><td>total number of pant in stock</td><td>".$pant1.'</td></tr>'.
-  "<tr><td>total number of jacket in stock</td><td>".$jacket1.'</td></tr>'.
-  "<tr><td>total number of blanket in stock</td><td>".$blanket1.'</td></tr>';
+echo "<tr><td>total number of shirt</td><td>".$shirt1.'</td></tr>'.
+  "<tr><td>total number of pant</td><td>".$pant1.'</td></tr>'.
+  "<tr><td>total number of jacket</td><td>".$jacket1.'</td></tr>'.
+  "<tr><td>total number of blanket</td><td>".$blanket1.'</td></tr>';
 echo "</table>";
 
 
@@ -175,16 +168,14 @@ echo "</table>";
                    </div>
                 </div>
                 
-               
+            <footer id="footer">
+              &copy;All Rights are reserved 2016.
+            </footer>         
                         
 			   
 		</div>
 	
-		<footer id="footer">
-			&copy;All Rights are reserved 2016.
-		</footer>    
-	
-	</div> 
+  </body>
 </html>
         
     

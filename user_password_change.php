@@ -119,11 +119,44 @@ if(!isset($_SESSION))
 						<?php 
 							if(isset($sid)) // if sid  has any value then it will enter inside else dont
                                  {
-                                  echo '<li><a href="index.php"> Home </a></li>
-                                  <li><a href="about_us.php"> About Us</a></li>
-                                  <li><a href="contact_us.php"> Contact Us </a></li>
-                                  <li><a href="app.php"> Set Appoinment </a></li>
-                                  <li><a href="user_profile.php"> User Profile </a></li>';
+                                  if($row['role']=='donor')  // for donor
+                    {
+                       echo '<li><a href="index.php"> Home </a></li>
+                                          <li><a href="about_us.php"> About Us</a></li>
+                                          <li><a href="contact_us.php"> Contact Us </a></li>
+                                          <li><a href="dashboard_for_donor.php"> Dashboard </a></li>';
+                                           
+                                           
+
+                    }
+                    else if ($row['role']=='moderator' ) // for mod
+                    { 
+                       
+
+                                           echo '<li><a href="index.php"> Home </a></li>
+                                          <li><a href="about_us.php"> About Us</a></li>
+                                          <li><a href="contact_us.php"> Contact Us </a></li>
+                                          <li><a href="dashboard_for_mod.php"> Dashboard </a></li>';
+                                           
+
+                                           
+
+
+                    }
+                    else  // for admin
+                    { 
+                       
+  
+                                           echo '<li><a href="index.php"> Home </a></li>
+                                          <li><a href="about_us.php"> About Us</a></li>
+                                          <li><a href="contact_us.php"> Contact Us </a></li>
+                                          <li><a href="dashboard.php"> Dashboard </a></li>';
+                                           
+                                          
+                                           
+
+
+                    }
                                   }
                                   else
                                   {
@@ -184,6 +217,7 @@ if(!isset($_SESSION))
 		</footer>    
 	
 	</div> 
+  </body>
 </html>
         
     

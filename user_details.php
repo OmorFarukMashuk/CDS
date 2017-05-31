@@ -242,14 +242,11 @@ echo "failed";
                 </div>
                 
                
-                        
+                <footer id="footer">
+                  &copy;All Rights are reserved 2016.
+                </footer>                 
 			   
-		</div>
-    
-		<footer id="footer">
-			&copy;All Rights are reserved 2016.
-		</footer>    
-	
+		</div>	
 	</div> 
    
   </body>

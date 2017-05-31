@@ -28,6 +28,41 @@
     	<header id="header">
 			<div id="header_area">
 				<div id="logo"><img src="files/icon/logo.png" alt="Logo"></div>
+				<?php 
+						if(!isset($_SESSION))
+                           {
+                                  session_start();
+
+		                                  if(isset($_SESSION['varname']))
+		                                  {
+		                                  $sid = $_SESSION['varname'];
+		                                  echo $sid;
+		                                  echo '<a href="logout.php"><button>log out</button></a>';
+
+		                                  }
+		                                  else
+		                                  {
+		                                  	echo "not logged in";
+		                                  }
+                            }
+                            else
+                            {
+								if(isset($sid)) // if sid  has any value then it will enter inside else dont
+                                  {
+                                  //$sid = $_SESSION['varname'];
+		                                  echo $sid;
+		                                  echo '<a href="logout.php"><button>log out</button></a>';
+                                  }
+                                  else // 
+                                  {
+                                 echo "not logged in";
+                                  }
+                            }
+                                  
+                                  
+
+					?>
+               
                 
 			</div>
 
@@ -56,9 +91,9 @@
     Email           <input type="text" name="email" id="email" ><br>
 
     
-    Password            <input type="password" name="pass" id="pass" ><br>
+    Password        <input type="password" name="pass" id="pass" ><br>
         
-                        <input type="submit"  value="Submit" ><br>
+                        <input type="submit"  value="Login" ><br>
 
         
     
@@ -72,6 +107,7 @@
 		</footer>    
 	
 	</div> 
+	</body>
 </html>
         
     

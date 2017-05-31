@@ -75,9 +75,7 @@
 											 echo '<li><a href="index.php"> Home </a></li>
 				                                  <li><a href="about_us.php"> About Us</a></li>
 				                                  <li><a href="contact_us.php"> Contact Us </a></li>
-				                                   <li><a href="app.php"> Set Appoinment </a></li>
-				                                   <li><a href="user_profile.php"> User Profile</a></li>
-				                                   <li><a href="my_donation.php"> My donation </a></li>';
+				                                   <li><a href="dashboard_for_donor.php"> Dashboard </a></li>';
 				                                   
 
 										}
@@ -88,10 +86,8 @@
 				                                   echo '<li><a href="index.php"> Home </a></li>
 				                                  <li><a href="about_us.php"> About Us</a></li>
 				                                  <li><a href="contact_us.php"> Contact Us </a></li>
-				                                   <li><a href="donorlist.php"> Donor List </a></li>
-				                                   <li><a href="donationdetails.php"> Donation Details</a></li>
-				                                   <li><a href="user_profile.php"> User Profile </a></li>
-				                                   <li><a href="my_donation.php"> My donation </a></li>';
+				                                   <li><a href="dashboard_for_mod.php"> Dashboard </a></li>';
+
 				                                   
 
 
@@ -132,14 +128,48 @@
 				</nav>
 			</div>
 		</header>
-     
-		
-	
-		<footer id="footer">
+		<div id="contents_area">
+        	<div id="main_contents">
+				
+               <div id="contents">
+                   <P STYLE="margin-bottom: 0.14in"><A NAME="_GoBack"></A><FONT SIZE=3>Every
+						year in our country lots of people die because of </FONT><FONT SIZE=3>winter
+						fury. Usually we start collecting </FONT><FONT SIZE=4>warm clothes
+						when winter comes.</FONT><FONT SIZE=3> The collection process takes a
+						long time and eventually when we start distributing clothes winter is
+						about to end. Unfortunately, may people have died by this time
+						because of coldness.<BR><BR>Our plan is to collect clothes throughout
+						the whole year. As a result, there will be no late to distribute
+						clothes among the needy people and by this we can save more thousand
+						of lives.<BR><BR>With this website, a </FONT><FONT SIZE=3><B>DONOR</B>
+					</FONT><FONT SIZE=3>
+						can donate</FONT><FONT SIZE=3>  </FONT><FONT SIZE=4><B>SHIRTS, PANTS,
+						JACKETS, BLANKETS </B></FONT><FONT SIZE=3>as many as he/she wants. In
+						future we have plan to add some more donation criteria.</FONT></P>
+						<P STYLE="margin-bottom: 0.14in"><FONT SIZE=3>Do not you want to be
+						a part of this generous effort? If yes, Why waiting?<BR><BR>Just </FONT><FONT SIZE=4><B>
+						REGISTER</B></FONT><FONT SIZE=3>
+						today by yourself and become a helping hand.<BR><BR></FONT><BR><BR>
+					</P>
+								   
+				</div>
+					
+							
+							
+							
+               </div>
+                
+				
+				
+		</div>
+				<footer id="footer">
 			&copy; All Rights are reserved 2016.
-		</footer>    
+		</footer>  
+	  
+		    
 	
-	</div>
+	</div> 
+ 
 		</body>
 </html> 
          

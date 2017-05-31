@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 27, 2016 at 09:27 PM
+-- Generation Time: Aug 28, 2016 at 08:31 PM
 -- Server version: 5.6.16
 -- PHP Version: 5.5.9
 
@@ -55,7 +55,7 @@ CREATE TABLE IF NOT EXISTS `inventory` (
   `mod_id` int(100) NOT NULL,
   `status` varchar(100) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=29 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=30 ;
 
 --
 -- Dumping data for table `inventory`
@@ -77,10 +77,8 @@ INSERT INTO `inventory` (`id`, `shirt`, `pant`, `jacket`, `blanket`, `appdate`, 
 (22, 1, 1, 1, 10, '2016-09-08', 3, 11, 'pending'),
 (23, 1, 5, 1, 6, '2016-08-25', 1, 10, 'done'),
 (24, 5, 5, 5, 5, '2016-08-31', 8, 10, 'done'),
-(25, 3, 1, 1, 1, '2016-08-27', 6, 10, 'done'),
-(26, 3, 2, 1, 4, '0000-00-00', 6, 10, 'done'),
-(27, 1, 1, 1, 1, '0000-00-00', 6, 10, 'pending'),
-(28, 1, 1, 1, 1, '0000-00-00', 6, 10, 'pending');
+(25, 3, 1, 1, 1, '2016-08-27', 6, 10, 'pending'),
+(29, 1, 1, 1, 1, '2016-09-15', 17, 10, 'done');
 
 -- --------------------------------------------------------
 
@@ -123,7 +121,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `imgpath` varchar(500) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `email` (`email`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=19 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=22 ;
 
 --
 -- Dumping data for table `users`
@@ -139,8 +137,9 @@ INSERT INTO `users` (`id`, `first`, `last`, `dob`, `address`, `district`, `gende
 (10, 'abu', 'rayhan', '2016-04-06', 'banani', 'dhaka', 'male', '01670335446', 'md@abu.com', 'a', 'moderator', 'images/bmw3.jpg'),
 (11, 'mod', 'mod', '2016-04-06', 'doulatpur', 'khulna', 'male', '01670335446', 'mod@mod.com', 'a', 'moderator', 'images/audi1.jpg'),
 (16, 'Mr.', 'admin', '2016-04-06', 'gulshan', 'dhaka', 'male', '01721662652', 'a@a.com', 'a', 'admin', 'images/audi2.jpg'),
-(17, 'Asif', 'Mahmud', '2016-04-06', 'badda', 'dhaka', 'male', '01677257730', 'a@m.com', 'a', 'donor', 'images/rangerover_20160826210308.jpg'),
-(18, '', '', '0000-00-00', '', 'dhaka', 'male', '', '', '', 'donor', 'images/_20160826221738.');
+(17, 'Asif', 'Mahmuddd', '2016-04-06', 'shantinagar', 'dhaka', 'male', '01677257730', 'a@m.com', 'a', 'donor', 'images/rangerover_20160826210308.jpg'),
+(18, '', '', '0000-00-00', '', 'dhaka', 'male', '', '', '', 'donor', 'images/_20160826221738.'),
+(19, 'sdacc', 'csdcckl', '2016-04-06', 'sd,nc ,sdc', 'dhaka', 'male', '01677257730', 'aaa@aaa.com', 'a', 'moderator', 'images/rangerover_20160827231842.jpg');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

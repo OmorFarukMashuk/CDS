@@ -1,8 +1,7 @@
 <!DOCTYPE HTML>
-<html lang="en">
+<html >
 	<head>
-        <meta http-equiv="content-type" content="text/html; charset=utf-8">
-		<meta name="viewport" content="initial-scale=1.0">
+        
          <title>Contact us</title>
         
         <link type="text/css" rel="stylesheet" href="css/style.css">
@@ -71,10 +70,7 @@
 											 echo '<li><a href="index.php"> Home </a></li>
 				                                  <li><a href="about_us.php"> About Us</a></li>
 				                                  <li><a href="contact_us.php"> Contact Us </a></li>
-				                                   <li><a href="app.php"> Set Appoinment </a></li>
-				                                   <li><a href="user_profile.php"> User Profile</a></li>
-				                                   <li><a href="my_donation.php"> My donation </a></li>';
-				                                   
+				                                   <li><a href="dashboard_for_donor.php"> Dashboard </a></li>';
 
 										}
 										else if ($row['role']=='moderator' ) // for mod
@@ -84,10 +80,7 @@
 				                                   echo '<li><a href="index.php"> Home </a></li>
 				                                  <li><a href="about_us.php"> About Us</a></li>
 				                                  <li><a href="contact_us.php"> Contact Us </a></li>
-				                                   <li><a href="donorlist.php"> Donor List </a></li>
-				                                   <li><a href="donationdetails.php"> Donation Details</a></li>
-				                                   <li><a href="user_profile.php"> User Profile </a></li>
-				                                   <li><a href="my_donation.php"> My donation </a></li>';
+				                                   <li><a href="dashboard_for_mod.php"> Dashboard </a></li>';
 				                                   
 
 
@@ -180,7 +173,13 @@
 		    
 	
 	</div> 
-</html>
+		<footer id="footer">
+			&copy; All Rights are reserved 2016.
+		</footer>  
+</div>
+	  
+		</body>
+</html> 
         
     
     

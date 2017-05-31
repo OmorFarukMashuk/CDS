@@ -201,14 +201,15 @@
                 
                
                         
-    <footer id="footer">
+      
+      <footer id="footer">
       &copy;All Rights are reserved 2016.
-    </footer>    
-       
+    </footer>   
     </div>
   
     
-  </div> 
+ 
+  </body>
 </html>
         
     

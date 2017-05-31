@@ -88,7 +88,7 @@
                         <li><a href="about_us.php"> About Us</a></li>
                         
                         <li><a href="contact_us.php"> Contact Us </a></li>
-                        <li><a href="user_profile.php"> User Profile </a></li>
+                        <li><a href="dashboard_for_donor.php"> Dashborad </a></li>
             </div>
         </header>   
 
@@ -99,7 +99,20 @@
             
                 
                <div id="contents">
+
                     <h1>Set Appoinment</h1>
+                      <UL>
+                        <LI><P STYLE="margin-bottom: 0.14in"><FONT SIZE=2>Please select
+                        number of </FONT><FONT SIZE=2><B>SHIRTS/PANTS/JACKETS/BLANKETS</B></FONT><FONT SIZE=2>
+                        you want to donate.</FONT></P>
+                        <LI><P STYLE="margin-bottom: 0.14in"><FONT SIZE=2>Then select </FONT><FONT SIZE=2><B>an
+                        appointment date</B></FONT><FONT SIZE=2> with your </FONT><FONT SIZE=2><B>MODERATOR</B></FONT><FONT SIZE=2>
+                        for your donation.</FONT></P>
+                        <LI><P STYLE="margin-bottom: 0.14in"><A NAME="_GoBack"></A><FONT SIZE=2>For
+                        any inconvenience you can also contact your </FONT><FONT SIZE=2><B>MODERATOR</B></FONT><FONT SIZE=2>
+                        by </FONT><FONT SIZE=2><B>email.</B></FONT><FONT SIZE=2> </FONT>
+                        </P>
+                    </UL>
                    <div id="app">
                    <form name="appform" onsubmit="return validateForm()" action="app_process.php" method="post" >
                        <ul>
@@ -160,15 +173,15 @@
                               <option value=10>10</option>
                             </select><br></li>
 
-                            <li>Appoinment Date:
+                            <li>Appointment Date:
                             
-                            <input type="date" name="appdate" id="app_date"><br>
+                                <input type="date" name="appdate" id="app_date"><br>
                            </li>
 
                            
 
 
-                            <input type="submit"  name="submit" value="Submit" "><br>
+                             <input type="submit"  name="submit" value="Submit" "><br>
                        </ul>
                        </form>
                    </div>
@@ -185,6 +198,7 @@
         </footer>    
     
     </div> <!--End wrapper-->
+    </body>
 </html>
         
     

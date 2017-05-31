@@ -51,13 +51,14 @@
     VALUES('$firstname','$lastname','$dob','$houseaddress','$district', '$gender','$Phone','$email','$password','$role','$filepath')";
     if(mysql_query($query))
     {
-        echo '<script type="text/javascript">alert("Welcome!")</script>';
-        include "index.php";
+        echo '<script type="text/javascript">alert("added!")</script>';
+        //header("location: index.php");
+        include 'dashboard.php';
     }
     else
     {
         echo '<script type="text/javascript">alert("try again")</script>';
-        include "login.php";
+        include 'dashboard.php';
     }
 
 
