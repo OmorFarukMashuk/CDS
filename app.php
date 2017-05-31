@@ -15,18 +15,6 @@
             
             
         </style>
-        <script type="text/javascript">
-          function validateForm() {
-            var inputdDate = document.getElementById("app_date").value;
-            
-            if(new Date(inputdDate).getTime() < new Date().getTime()){
-              alert("Please Select a valid date");
-              return false;
-
-            }
-          }
-        </script>
-
 
     </head>    
     <body>
@@ -58,7 +46,7 @@
                <div id="contents">
                     <h1>Set Appoinment</h1>
                    <div id="app">
-                   <form name="appform" onsubmit="return validateForm()" action="app_process.php" method="post" >
+                   <form name="appform"   action="app_process.php" method="post" >
                        <ul>
                             <li>User ID :<?php
                                 if(!isset($_SESSION))
@@ -137,7 +125,7 @@
 
                             <li>Appoinment Date:
                             
-                            <input type="date" name="appdate" id="app_date"><br>
+                            <input type="date" name="appdate" value="2016-08-12"><br>
                            </li>
 
                            
@@ -154,7 +142,7 @@
                
         </div>
 
-        
+        <a href="logout.php"><button>log out</button></a>
         <footer id="footer">
             &copy;All Rights are reserved 2016.
         </footer>    

@@ -20,7 +20,7 @@ if($row['id']==$sid  )
 	$phone= $row['phone'];
 	$email= $row['email'];
 	$pass= $row['pass'];
-	$imgpath= $row['imgpath'];
+
 }
 
 else
@@ -48,9 +48,6 @@ echo "failed";
 				<div id="logo"><img src="files/icon/logo.png" alt="Logo"></div>
 				<?php 
 						
-					if(!isset($_SESSION))
-                           {
-                                  session_start();
 
 		                                  if(isset($_SESSION['varname']))
 		                                  {
@@ -62,21 +59,17 @@ echo "failed";
 		                                  else
 		                                  {
 		                                  	echo "not logged in";
-		                                  }
-                            }
-                            else
-                            {
-								if(isset($sid)) // if sid  has any value then it will enter inside else dont
+		                                 }
+                                 
+                                  
+                                  if(isset($sid)) // if sid  has any value then it will enter inside else dont
                                   {
-                                  //$sid = $_SESSION['varname'];
-		                                  echo $sid;
-		                                  echo '<a href="logout.php"><button>log out</button></a>';
+                                  //echo $sid;
                                   }
                                   else // 
                                   {
-                                 echo "not logged in";
+                                 
                                   }
-                            }
 
 					?>
                   
@@ -121,7 +114,6 @@ echo "failed";
                    <div id="reg">
                    <form name="myForm"  onsubmit="return validateForm()"  action="register.php" method="post" >
                        <ul>
-                            Photo<li><br><?php echo"<img src= '$imgpath' height= '300' width= '200'/>"?></li>;
                             User ID<li><br><?php echo $id;?></li>
                             First Name<li><br><?php echo $first;?></li>
                             Last Name<li><br><?php echo $last;?></li>
@@ -131,9 +123,8 @@ echo "failed";
                             Phone<li><br><?php echo $phone;?></li>
                             Email ID<li><br><?php echo $email;;?></li>
                             Password<li><br><?php echo $pass;?></li>
-                            <button><a href="user_profile_change.php"> Update Info</a></button>
-                            
-                            
+                            Confirm password<li><br></li>
+
 
 
                        </ul>

@@ -37,8 +37,8 @@ function validateForm() {
     var pass2 = document.getElementById("pass2").value;
     if (pass1 != pass2) {
         alert("Passwords Do not match");
-       document.getElementById("pass1").style.borderColor = "#E34234";
-        document.getElementById("pass2").style.borderColor = "#E34234";
+       // document.getElementById("pass1").style.borderColor = "#E34234";
+        //document.getElementById("pass2").style.borderColor = "#E34234";
         return false;
     }
     var val = document.getElementById("phone").value;
@@ -84,9 +84,8 @@ function validateForm() {
 				
                     <h1>REGISTER!!!</h1>
                    <div id="reg">
-                   <form name="myForm"  onsubmit="return validateForm()"  action="register_process.php" method="post" attribute enctype="multipart/form-data">
+                   <form name="myForm"  onsubmit="return validateForm()"  action="register_process.php" method="post" >
                        <ul>
-                            Image Upload<li><input type="file" name="file_img" id="fileChooser" accept =".jpg, .jpeg, .png"/><br>
                             First Name<li><input type="text" name="FirstName" id="firstnameid" placeholder="First Name" ><br></li>
                             Last Name<li><input type="text" name ="LastName" id="lastnameid" placeholder="Last Name"><br></li>
                             DOB<li><input type="date" name="DOB" value="2016-04-06"><br></li>
@@ -126,7 +125,6 @@ function validateForm() {
 		</footer>    
 	
 	</div> 
-    </body>
 </html>
         
     

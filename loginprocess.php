@@ -12,22 +12,9 @@ $result=mysql_query("select * from users where email='$email' and pass='$pass'")
 	
 $row= mysql_fetch_array($result);
 if($row['email']==$email && $row['pass']==$pass )
-{ 	$sid=$row['id'];
-	$_SESSION['varname'] = $sid;
-	if($row['role']=='moderator')
-	{
-		include("index.php");
-
-	}
-	else
-	{
-		include("index.php");
-
-	}
-
-
-
-		 
+{ $sid=$row['id'];
+$_SESSION['varname'] = $sid;
+ include("app.php");
 }
 else if($row['email']=="" || $row['pass']=="" || $row['email']==null || $row['pass']==null){
 echo "failed!!";
