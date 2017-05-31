@@ -20,7 +20,8 @@ if($row['id']==$sid  )
 	$phone= $row['phone'];
 	$email= $row['email'];
 	$pass= $row['pass'];
-
+	$imgpath= $row['imgpath'];
+  $role=$row['role'];
 }
 
 else
@@ -30,7 +31,7 @@ echo "failed";
 <html >
 	<head>
        
-        <title>register</title>
+        <title>Basic Information</title>
         <link type="text/css" rel="stylesheet" href="css/style.css">
         <style type="text/css">
             
@@ -48,6 +49,9 @@ echo "failed";
 				<div id="logo"><img src="files/icon/logo.png" alt="Logo"></div>
 				<?php 
 						
+					if(!isset($_SESSION))
+                           {
+                                  session_start();
 
 		                                  if(isset($_SESSION['varname']))
 		                                  {
@@ -59,17 +63,21 @@ echo "failed";
 		                                  else
 		                                  {
 		                                  	echo "not logged in";
-		                                 }
-                                 
-                                  
-                                  if(isset($sid)) // if sid  has any value then it will enter inside else dont
+		                                  }
+                            }
+                            else
+                            {
+								if(isset($sid)) // if sid  has any value then it will enter inside else dont
                                   {
-                                  //echo $sid;
+                                  //$sid = $_SESSION['varname'];
+		                                  echo $sid;
+		                                  echo '<a href="logout.php"><button>log out</button></a>';
                                   }
                                   else // 
                                   {
-                                 
+                                 echo "not logged in";
                                   }
+                            }
 
 					?>
                   
@@ -81,10 +89,21 @@ echo "failed";
 						<?php 
 							if(isset($sid)) // if sid  has any value then it will enter inside else dont
                                  {
+
+                                  if($role=='admin')
+                                  {
+                                    echo '<li><a href="index.php"> Home </a></li>
+                                  <li><a href="about_us.php"> About Us</a></li>
+                                  <li><a href="contact_us.php"> Contact Us </a></li>
+                                  <li><a href="dashboard.php"> Dashboard</a></li>';
+
+                                  }
+                                  else
+
                                   echo '<li><a href="index.php"> Home </a></li>
                                   <li><a href="about_us.php"> About Us</a></li>
                                   <li><a href="contact_us.php"> Contact Us </a></li>
-                                  <li><a href="app.php"> Set Appoinment </a></li>
+                                  
                                   <li><a href="user_profile.php"> User Profile </a></li>';
                                   }
                                   else
@@ -110,25 +129,81 @@ echo "failed";
         	
             
 				
-                    <h1>REGISTER!!!</h1>
+                    <h1>Basic Information</h1>
                    <div id="reg">
-                   <form name="myForm"  onsubmit="return validateForm()"  action="register.php" method="post" >
-                       <ul>
-                            User ID<li><br><?php echo $id;?></li>
-                            First Name<li><br><?php echo $first;?></li>
-                            Last Name<li><br><?php echo $last;?></li>
-                            DOB<li><br><?php echo $dob;?></li>
-                            Hourse Address<li><br><?php echo $address;?></li>
-                            Gender<li><?php echo $gender;?></li>
-                            Phone<li><br><?php echo $phone;?></li>
-                            Email ID<li><br><?php echo $email;;?></li>
-                            Password<li><br><?php echo $pass;?></li>
-                            Confirm password<li><br></li>
+                   
+                     
+                            Photo<br><?php echo"<img src= '$imgpath' height= '200' width= '150'/>"?>
+                            <table>
+                              <thead>
+                                
+                              </thead>
+                              <tbody>
+                                
+                                
+                                   <tr>
+                                   <td>User ID</td>
+                                   <td><?php echo $id;?></td>
+                                   </tr>
+                                   
+
+                                   <tr>
+                                   <td>Role</td>
+                                   <td><?php echo $role;?></td>
+                                   </tr>
+                                   
+
+                                   <tr>
+                                   <td>Name</td>
+                                   <td><?php echo $first ?></td>
+                                   </tr>
+                                   
+                                   <tr>
+                                   <td>DOB</td>
+                                   <td><?php echo $dob;?></td>
+                                   </tr>
+                                   
+
+                                   <tr>
+                                  <td>Hourse Address  </td>
+                                   <td><?php echo $address;?></td></tr>
+                                   
+
+                                   <tr>
+                                   <td>Gender</td>
+                                  <td> <?php echo $gender;?></td>
+                                  </tr>
+                                   
+                                   
+
+                                   <tr>
+                                   <td>Phone</td>
+                                   <td><?php echo $phone;?></td>
+                                   </tr>
 
 
+                                   <tr>
+                                   <td>Email ID</td>
+                                   <td><?php echo $email;?></td>
+                                   </tr>
+                                   
+                                   <tr>
+                                   <td>Password</td>
+                                   <td><?php echo $pass;?></td>
+                                   </tr>
+                                
+                              </tbody>
 
-                       </ul>
-                       </form>
+                            </table>
+                           
+                            <button><a href="user_password_change.php"> Update Password</a></button>
+                            <button><a href="user_info_change.php"> Update Information</a></button>
+                            
+                            
+
+
+                       
+                       
                    </div>
                 </div>
                 

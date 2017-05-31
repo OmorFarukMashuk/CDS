@@ -15,6 +15,26 @@
             
             
         </style>
+        <script type="text/javascript">
+          function validateForm() {
+
+            if(document.getElementById("app_date").value==null||document.getElementById("app_date").value=="")
+            {
+              alert("field empty");
+                return false;
+          }
+
+
+            var inputdDate = document.getElementById("app_date").value;
+            
+            if(new Date(inputdDate).getTime() < new Date().getTime()){
+              alert("Please Select a valid date");
+              return false;
+
+            }
+          }
+        </script>
+
 
     </head>    
     <body>
@@ -22,6 +42,41 @@
         <header id="header">
             <div id="header_area">
                 <div id="logo"><img src="files/icon/logo.png" alt="Logo"></div>
+                <?php 
+            
+          if(!isset($_SESSION))
+                           {
+                                  session_start();
+
+                                      if(isset($_SESSION['varname']))
+                                      {
+                                      $sid = $_SESSION['varname'];
+                                      echo $sid;
+                                      echo '<a href="logout.php"><button>log out</button></a>';
+
+                                      }
+                                      else
+                                      {
+                                        echo "not loggggged in";
+                                      }
+                            }
+                            else
+                            {
+                if(isset($sid)) // if sid  has any value then it will enter inside else dont
+                                  {
+                                  //$sid = $_SESSION['varname'];
+                                      echo $sid;
+                                      echo '<a href="logout.php"><button>log out</button></a>';
+                                  }
+                                  else // 
+                                  {   //session_start();
+                                    $sid = $_SESSION['varname'];
+                                      echo $sid;
+                                      echo '<a href="logout.php"><button>log out</button></a>';
+                                  }
+                            }
+
+          ?>
                 
             </div>
 
@@ -46,27 +101,9 @@
                <div id="contents">
                     <h1>Set Appoinment</h1>
                    <div id="app">
-                   <form name="appform"   action="app_process.php" method="post" >
+                   <form name="appform" onsubmit="return validateForm()" action="app_process.php" method="post" >
                        <ul>
-                            <li>User ID :<?php
-                                if(!isset($_SESSION))
-                                  {
-                                  session_start();
-                                  $sid = $_SESSION['varname'];
-                                  }
-
-                                  
-                                  if(isset($sid)) // if sid  has any value then it will enter inside else dont
-                                  {
-                                  echo $sid;
-                                  }
-                                  else // 
-                                  {
-                                 
-                                  }
-
-                                     
-                              ?></li>
+                            
                             <li>Shirt:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp    
                             <select name="shirt">
                               <option value=1>1</option>
@@ -125,7 +162,7 @@
 
                             <li>Appoinment Date:
                             
-                            <input type="date" name="appdate" value="2016-08-12"><br>
+                            <input type="date" name="appdate" id="app_date"><br>
                            </li>
 
                            
@@ -142,7 +179,7 @@
                
         </div>
 
-        <a href="logout.php"><button>log out</button></a>
+        
         <footer id="footer">
             &copy;All Rights are reserved 2016.
         </footer>    

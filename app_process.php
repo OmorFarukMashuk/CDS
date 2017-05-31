@@ -4,8 +4,8 @@ session_start();
             {
                                               
                                               $sid = $_SESSION['varname'];
-                                              echo $sid;
-                                              echo '<a href="logout.php"><button>log out</button></a>';
+                                             // echo $sid;
+                                             // echo '<a href="logout.php"><button>log out</button></a>';
 
             }
             else
@@ -22,33 +22,34 @@ session_start();
         
         $rowone= mysql_fetch_array($one);
         $dis=$rowone['district'];
-        echo $dis.'</br>';
+        //echo $dis.'</br>';
 
-    $two=mysql_query("select * from moderator where area='$dis'")
-        or die("failed to query from moderator ".mysql_error());
+    $two=mysql_query("select * from users where district='$dis' and role='moderator'")
+        or die("failed to query from users ".mysql_error());
         $rowtwo= mysql_fetch_array($two);
-        $modid=$rowtwo['mod_id'];
-        echo $modid;
+        $modid=$rowtwo['id'];
+        //echo $modid;
     
     $shirt = $_POST["shirt"];
     $pant= $_POST["pant"];
     $jacket=$_POST["jacket"];
     $blanket=$_POST["blanket"];
     $appdate=$_POST["appdate"];
+    $p="pending";
    
     //echo $firstname ."</br>".$lastname."</br>".$dob ."</br>".$gender."</br>".$houseaddress."</br>".$password."</br>".$Phone."</br>".$email;
 
-    $query = "INSERT INTO inventory(shirt,pant,jacket,blanket,appdate,user_id,mod_id)
-    VALUES($shirt,$pant,$jacket,$blanket,'$appdate',$sid,$modid)";
+    $query = "INSERT INTO inventory(shirt,pant,jacket,blanket,appdate,user_id,mod_id,status)
+    VALUES($shirt,$pant,$jacket,$blanket,'$appdate',$sid,$modid,'$p')";
     if(mysql_query($query))
     {
         echo '<script type="text/javascript">alert("inserted!")</script>'.mysql_error();
-        //include "index.php";
+        include "index.php";
     }
     else
     {
-        echo '<script type="text/javascript">alert("try again")</script>';
-       // include "login.php";
+        echo '<script type="text/javascript">alert("try again")</script>'.mysql_error();;
+       include "login.php";
     }
 
 
