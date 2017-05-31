@@ -44,7 +44,7 @@
 			</div>
 		</header>	
 
-		z
+		
      
 		<div id="contents_area">
 
@@ -53,10 +53,10 @@
                 <form name="myForm" onsubmit="return validateForm()"  action="loginprocess.php" method="post"  >
 <pre>
 
-    Email           <input type="text" name="email" id="email" value ="abc@abc.com"><br>
+    Email           <input type="text" name="email" id="email" value ="a@b.com"><br>
 
     
-    Password            <input type="pass" name="pass" id="pass" value="a"><br>
+    Password            <input type="password" name="pass" id="pass" value="a"><br>
         
                         <input type="submit"  value="Submit" ><br>
 

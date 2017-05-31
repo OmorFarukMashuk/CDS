@@ -39,7 +39,37 @@ echo "failed";
             }
             
         </style>
+        <script type="text/javascript">
 
+
+function validateForm() {
+
+    
+    
+    var pass1 = document.getElementById("pass1").value;
+    var pass2 = document.getElementById("pass2").value;
+    var oldpass = document.getElementById("oldpass").value;
+    var php_var = "<?php echo"$pass"; ?>";
+
+    if (oldpass != php_var) {
+        alert("OLD Passwords Do not match");
+       document.getElementById("oldpass").style.borderColor = "#E34234";
+        //document.getElementById("pass2").style.borderColor = "#E34234";
+        return false;
+    }
+    if (pass1 != pass2) {
+        alert("Passwords Do not match");
+       document.getElementById("pass1").style.borderColor = "#E34234";
+        document.getElementById("pass2").style.borderColor = "#E34234";
+        return false;
+    }
+    
+
+   
+    
+ };
+
+</script>
 	</head>    
 	<body>
     	<div id="wrapper">
@@ -48,29 +78,29 @@ echo "failed";
 				<div id="logo"><img src="files/icon/logo.png" alt="Logo"></div>
 				<?php 
 						
-					if(!isset($_SESSION))
+if(!isset($_SESSION))
                            {
                                   session_start();
 
-		                                  if(isset($_SESSION['varname']))
-		                                  {
-		                                  $sid = $_SESSION['varname'];
-		                                  echo $sid;
-		                                  echo '<a href="logout.php"><button>log out</button></a>';
+                                      if(isset($_SESSION['varname']))
+                                      {
+                                      $sid = $_SESSION['varname'];
+                                      echo $sid;
+                                      echo '<a href="logout.php"><button>log out</button></a>';
 
-		                                  }
-		                                  else
-		                                  {
-		                                  	echo "not logged in";
-		                                  }
+                                      }
+                                      else
+                                      {
+                                        echo "not logged in";
+                                      }
                             }
                             else
                             {
-								if(isset($sid)) // if sid  has any value then it will enter inside else dont
+                if(isset($sid)) // if sid  has any value then it will enter inside else dont
                                   {
                                   //$sid = $_SESSION['varname'];
-		                                  echo $sid;
-		                                  echo '<a href="logout.php"><button>log out</button></a>';
+                                      echo $sid;
+                                      echo '<a href="logout.php"><button>log out</button></a>';
                                   }
                                   else // 
                                   {
@@ -119,20 +149,22 @@ echo "failed";
 				
                     <h1>REGISTER!!!</h1>
                    <div id="reg">
-                   <form name="myForm"  onsubmit="return validateForm()"  action="register.php" method="post" >
+                   <form name="myForm"  onsubmit="return validateForm()"  action="user_profile_update.php" method="post" >
                        <ul>
-                            Photo<li><br><?php echo"<img src= '$imgpath' height= '300' width= '200'/>"?></li>;
-                            User ID<li><br><?php echo $id;?></li>
-                            First Name<li><br><?php echo $first;?></li>
-                            Last Name<li><br><?php echo $last;?></li>
-                            DOB<li><br><?php echo $dob;?></li>
-                            Hourse Address<li><br><?php echo $address;?></li>
-                            Gender<li><?php echo $gender;?></li>
-                            Phone<li><br><?php echo $phone;?></li>
-                            Email ID<li><br><?php echo $email;;?></li>
-                            Password<li><br><?php echo $pass;?></li>
-                            <button><a href="user_profile_change.php"> Update Info</a></button>
+                           
+                            ID <li ><input type="text" value="<?php echo "$id"; ?>" name="id" readonly></li>
+                            OLD Password<li><input type="text" name="password" id="oldpass" placeholder="password" 
+                            ><br></li>
+
+                            New Password<li><input type="text" name="password" id="pass1" placeholder="password"><br></li>
+                            Confirm password<li><input type="text" name="password" id="pass2"  placeholder="password"><br></li>
+
                             
+
+                            <input type="submit"  name="submit" value="update" "><br>                        
+
+                       </ul>
+                       </form>
                             
 
 

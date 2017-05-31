@@ -1,31 +1,5 @@
-<?php
 
-session_start();
-$sid = $_SESSION['varname'];
-mysql_connect("localhost","root","");
-mysql_select_db("cds");
 
-$result=mysql_query("select * from users where id='$sid' ")
-		or die("failed to query ".mysql_error());
-	
-$row= mysql_fetch_array($result);
-if($row['id']==$sid  )
-{ 
-	$id= $row['id'];
-	$first= $row['first'].
-	$last=$row['last'];
-	$dob= $row['dob'];
-	$address= $row['address'];
-	$gender= $row['gender'];
-	$phone= $row['phone'];
-	$email= $row['email'];
-	$pass= $row['pass'];
-	$imgpath= $row['imgpath'];
-}
-
-else
-echo "failed";
-?>
 <!DOCTYPE HTML>
 <html >
 	<head>
@@ -48,7 +22,7 @@ echo "failed";
 				<div id="logo"><img src="files/icon/logo.png" alt="Logo"></div>
 				<?php 
 						
-					if(!isset($_SESSION))
+if(!isset($_SESSION))
                            {
                                   session_start();
 
@@ -121,17 +95,42 @@ echo "failed";
                    <div id="reg">
                    <form name="myForm"  onsubmit="return validateForm()"  action="register.php" method="post" >
                        <ul>
-                            Photo<li><br><?php echo"<img src= '$imgpath' height= '300' width= '200'/>"?></li>;
-                            User ID<li><br><?php echo $id;?></li>
-                            First Name<li><br><?php echo $first;?></li>
-                            Last Name<li><br><?php echo $last;?></li>
-                            DOB<li><br><?php echo $dob;?></li>
-                            Hourse Address<li><br><?php echo $address;?></li>
-                            Gender<li><?php echo $gender;?></li>
-                            Phone<li><br><?php echo $phone;?></li>
-                            Email ID<li><br><?php echo $email;;?></li>
-                            Password<li><br><?php echo $pass;?></li>
-                            <button><a href="user_profile_change.php"> Update Info</a></button>
+                           <?php
+
+//session_start();
+$sid = $_SESSION['varname'];
+mysql_connect("localhost","root","");
+mysql_select_db("cds");
+//echo $sid;
+
+$result=mysql_query("select * from inventory where user_id='$sid'") 
+or die("failed to query from inventory".mysql_error());
+
+$shirt=0;
+$pant=0;
+$jacket=0;
+$blanket=0;
+while ($row = mysql_fetch_assoc($result)){
+    $shirt = $shirt+$row['shirt'];
+    $pant =$pant+ $row['pant'];
+    $jacket =  $jacket+$row['jacket'];
+    $blanket = $blanket+$row['blanket'];
+    
+}
+
+echo "total number of shirt donated :".$shirt.'<br>'.
+	"total number of pant donated :".$pant.'<br>'.
+	"total number of jacket donated :".$jacket.'<br>'.
+	"total number of blanket donated :".$blanket.'<br>';
+	//"appointment date :".$row['appdate'];
+
+	
+	
+	
+	
+
+
+?>
                             
                             
 

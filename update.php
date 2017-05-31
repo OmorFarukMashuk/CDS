@@ -1,15 +1,24 @@
 <?php
 
-session_start();
-$sid = $_SESSION['varname'];
-mysql_connect("localhost","root","");
-mysql_select_db("cds");
+//session_start();
+if(isset($_SESSION['searchid']))
+ {
+                                              
+                               $searchid= $_SESSION['searchid'];
+                                            //echo $searchid;
+                                              
+}
+$db_connect = mysql_connect("localhost","root","") or die("unable to connect");
 
-$result=mysql_query("select * from users where id='$sid' ")
+    mysql_select_db("cds",$db_connect) or die ("unable to select cds");
+
+
+
+        $result=mysql_query("select * from users where id='$searchid' ")
 		or die("failed to query ".mysql_error());
 	
 $row= mysql_fetch_array($result);
-if($row['id']==$sid  )
+if($row['id']==$searchid  )
 { 
 	$id= $row['id'];
 	$first= $row['first'].
@@ -20,7 +29,7 @@ if($row['id']==$sid  )
 	$phone= $row['phone'];
 	$email= $row['email'];
 	$pass= $row['pass'];
-	$imgpath= $row['imgpath'];
+
 }
 
 else
@@ -48,9 +57,6 @@ echo "failed";
 				<div id="logo"><img src="files/icon/logo.png" alt="Logo"></div>
 				<?php 
 						
-					if(!isset($_SESSION))
-                           {
-                                  session_start();
 
 		                                  if(isset($_SESSION['varname']))
 		                                  {
@@ -62,21 +68,17 @@ echo "failed";
 		                                  else
 		                                  {
 		                                  	echo "not logged in";
-		                                  }
-                            }
-                            else
-                            {
-								if(isset($sid)) // if sid  has any value then it will enter inside else dont
+		                                 }
+                                 
+                                  
+                                  if(isset($sid)) // if sid  has any value then it will enter inside else dont
                                   {
-                                  //$sid = $_SESSION['varname'];
-		                                  echo $sid;
-		                                  echo '<a href="logout.php"><button>log out</button></a>';
+                                  //echo $sid;
                                   }
                                   else // 
                                   {
-                                 echo "not logged in";
+                                 
                                   }
-                            }
 
 					?>
                   
@@ -119,9 +121,8 @@ echo "failed";
 				
                     <h1>REGISTER!!!</h1>
                    <div id="reg">
-                   <form name="myForm"  onsubmit="return validateForm()"  action="register.php" method="post" >
+                   <form name="myForm" >
                        <ul>
-                            Photo<li><br><?php echo"<img src= '$imgpath' height= '300' width= '200'/>"?></li>;
                             User ID<li><br><?php echo $id;?></li>
                             First Name<li><br><?php echo $first;?></li>
                             Last Name<li><br><?php echo $last;?></li>
@@ -129,11 +130,9 @@ echo "failed";
                             Hourse Address<li><br><?php echo $address;?></li>
                             Gender<li><?php echo $gender;?></li>
                             Phone<li><br><?php echo $phone;?></li>
-                            Email ID<li><br><?php echo $email;;?></li>
-                            Password<li><br><?php echo $pass;?></li>
-                            <button><a href="user_profile_change.php"> Update Info</a></button>
+                            Email ID<li><br><?php echo $email;?></li>
                             
-                            
+
 
 
                        </ul>

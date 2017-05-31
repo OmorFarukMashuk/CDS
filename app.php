@@ -15,6 +15,18 @@
             
             
         </style>
+        <script type="text/javascript">
+          function validateForm() {
+            var inputdDate = document.getElementById("app_date").value;
+            
+            if(new Date(inputdDate).getTime() < new Date().getTime()){
+              alert("Please Select a valid date");
+              return false;
+
+            }
+          }
+        </script>
+
 
     </head>    
     <body>
@@ -46,7 +58,7 @@
                <div id="contents">
                     <h1>Set Appoinment</h1>
                    <div id="app">
-                   <form name="appform"    >
+                   <form name="appform" onsubmit="return validateForm()" action="app_process.php" method="post" >
                        <ul>
                             <li>User ID :<?php
                                 if(!isset($_SESSION))
@@ -68,64 +80,64 @@
                                      
                               ?></li>
                             <li>Shirt:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp    
-                            <select>
-                              <option value="1">1</option>
-                              <option value="2">2</option>
-                              <option value="3">3</option>
-                              <option value="4">4</option>
-                              <option value="5">5</option>
-                              <option value="6">6</option>
-                              <option value="7">7</option>
-                              <option value="8">8</option>
-                              <option value="9">9</option>
-                              <option value="10">10</option>
+                            <select name="shirt">
+                              <option value=1>1</option>
+                              <option value=2>2</option>
+                              <option value=3>3</option>
+                              <option value=4>4</option>
+                              <option value=5>5</option>
+                              <option value=6>6</option>
+                              <option value=7>7</option>
+                              <option value=8>8</option>
+                              <option value=9>9</option>
+                              <option value=10>10</option>
                             </select><br></li>
 
                             <li>Pants:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp 
-                            <select>
-                              <option value="1">1</option>
-                              <option value="2">2</option>
-                              <option value="3">3</option>
-                              <option value="4">4</option>
-                              <option value="5">5</option>
-                              <option value="6">6</option>
-                              <option value="7">7</option>
-                              <option value="8">8</option>
-                              <option value="9">9</option>
-                              <option value="10">10</option>
+                            <select name="pant">
+                              <option value=1>1</option>
+                              <option value=2>2</option>
+                              <option value=3>3</option>
+                              <option value=4>4</option>
+                              <option value=5>5</option>
+                              <option value=6>6</option>
+                              <option value=7>7</option>
+                              <option value=8>8</option>
+                              <option value=9>9</option>
+                              <option value=10>10</option>
                             </select><br></li>
 
                             <li>Jacket:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp 
-                            <select>
-                              <option value="1">1</option>
-                              <option value="2">2</option>
-                              <option value="3">3</option>
-                              <option value="4">4</option>
-                              <option value="5">5</option>
-                              <option value="6">6</option>
-                              <option value="7">7</option>
-                              <option value="8">8</option>
-                              <option value="9">9</option>
-                              <option value="10">10</option>
+                            <select name="jacket">
+                              <option value=1>1</option>
+                              <option value=2>2</option>
+                              <option value=3>3</option>
+                              <option value=4>4</option>
+                              <option value=5>5</option>
+                              <option value=6>6</option>
+                              <option value=7>7</option>
+                              <option value=8>8</option>
+                              <option value=9>9</option>
+                              <option value=10>10</option>
                             </select><br></li>
 
                             <li>Blanket:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp 
-                            <select>
-                              <option value="1">1</option>
-                              <option value="2">2</option>
-                              <option value="3">3</option>
-                              <option value="4">4</option>
-                              <option value="5">5</option>
-                              <option value="6">6</option>
-                              <option value="7">7</option>
-                              <option value="8">8</option>
-                              <option value="9">9</option>
-                              <option value="10">10</option>
+                            <select name ="blanket">
+                              <option value=1>1</option>
+                              <option value=2>2</option>
+                              <option value=3>3</option>
+                              <option value=4>4</option>
+                              <option value=5>5</option>
+                              <option value=6>6</option>
+                              <option value=7>7</option>
+                              <option value=8>8</option>
+                              <option value=9>9</option>
+                              <option value=10>10</option>
                             </select><br></li>
 
                             <li>Appoinment Date:
                             
-                            <input type="date" name="appdate" value=""><br>
+                            <input type="date" name="appdate" id="app_date"><br>
                            </li>
 
                            
@@ -142,7 +154,7 @@
                
         </div>
 
-        <a href="logout.php"><button>log out</button></a>
+        
         <footer id="footer">
             &copy;All Rights are reserved 2016.
         </footer>    

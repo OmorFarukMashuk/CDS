@@ -133,27 +133,7 @@
 			</div>
 		</header>
      
-		<div id="contents_area">
-        	<img class="mySlides" src="files/icon/bg.jpg" alt="Background"> 
-        	<img class="mySlides" src="files/icon/bg2.jpg" alt="Background">
-        	<img class="mySlides" src="files/icon/bg3.jpg" alt="Background">
-        	<img class="mySlides" src="files/icon/bg4.jpg" alt="Background">     	
-		</div>
-		<script>
-			var myIndex = 0;
-			carousel();
-			function carousel() {
-			var i;
-			var x = document.getElementsByClassName("mySlides");
-			for (i = 0; i < x.length; i++) {
-			x[i].style.display = "none";
-			}
-			myIndex++;
-			if (myIndex > x.length) {myIndex = 1}
-			x[myIndex-1].style.display = "block";
-			setTimeout(carousel, 2500); // Change image every 2.5 seconds
-			}
-		</script>
+		
 	
 		<footer id="footer">
 			&copy; All Rights are reserved 2016.
